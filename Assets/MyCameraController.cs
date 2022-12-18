@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyCameraCoontroller : MonoBehaviour
+public class MyCameraController : MonoBehaviour
 {
     //Unityちゃんのオブジェクト
     private GameObject unitychan;
