@@ -22,7 +22,7 @@ public class ItemGenerator : MonoBehaviour
     private GameObject unitychan;
     //Unityちゃんの見える範囲
     private float viewPos = 40f;
-    //アイテムを生成する開始地点
+    //アイテムを生成する地点
     private float Pos = 0f;
     //前回アイテムが生成された終了地点
     private float createdPos = 0f;
@@ -40,8 +40,9 @@ public class ItemGenerator : MonoBehaviour
         //Unityちゃんの位置＋４０ｍ先をアイテム生成の終了位置に設定
         Pos = unitychan.transform.position.z + viewPos;
 
+        //スタート地点を超えていて終了地点を超えていないかつ
         //前回アイテムを生成した位置+15fを超えている場合
-        if (Pos >= createdPos + 15f && Pos < goalPos)
+        if (Pos >= startPos && Pos >= createdPos + 15f && Pos < goalPos)
         {
             //アイテムを生成する
             CreateItem(Pos);
